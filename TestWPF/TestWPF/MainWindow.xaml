@@ -9,6 +9,13 @@
         <system:String x:Key="propiete1">Nydia</system:String>
         <system:String x:Key="propiete2">Nomede</system:String>
         <system:String x:Key="propiete3">Martyre</system:String>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="Red" />
+        </Style>
     </Window.Resources>
     
     <!--<Grid x:Name="button">
@@ -51,6 +58,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -63,8 +71,9 @@
         <TextBlock Text="Bienvenue à doranco" HorizontalAlignment="Center" Grid.ColumnSpan="3"></TextBlock>
         <Button Content=" Coucou1" Grid.Column="0" Grid.Row="1"/>
         <Button Content=" Coucou2" Grid.Column="1"  Grid.Row="2"/>
-        <Button Content=" Coucou3" Grid.Column="2" Grid.Row="3" />
-        
-
+        <Button Content=" Coucou3" Grid.Column="3" Grid.Row="3" />
+        <GridSplitter Grid.Column="2" Grid.Row="2" Width="20" HorizontalAlignment="Stretch"   />
     </Grid>
+    
+   
 </Window>
