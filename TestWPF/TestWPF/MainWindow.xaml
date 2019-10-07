@@ -17,7 +17,14 @@
         
 
     </>-->
-    <Canvas>
+    <!--<Canvas>
         <Button Content="{StaticResource propiete1}" Canvas.Left =" 354"  Canvas.Top="85"/>
-    </Canvas>
+    </>-->
+
+    <WrapPanel>
+        <Button Content=" Coucou" Width="150"></Button>
+        <Button Content=" Coucou" Width="150"></Button>
+        <Button Content=" Coucou" Width="150"></Button>
+        <Button Content=" Coucou" Width="150"></Button>
+    </WrapPanel>
 </Window>

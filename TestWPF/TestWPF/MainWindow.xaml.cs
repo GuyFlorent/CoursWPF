@@ -23,7 +23,7 @@ namespace TestWPF
         public MainWindow()
         {
             InitializeComponent();
-            button.HorizontalAlignment = HorizontalAlignment.Left;
+            //button.HorizontalAlignment = HorizontalAlignment.Left;
         }
     }
     public class coucou : ContentControl
