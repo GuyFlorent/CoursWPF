@@ -37,12 +37,32 @@
 
     <!--DockPanel me permet d'intégrer des controles sur les bordures de ma fenetre
     tout control non  docker se troluve au centre-->
-    <DockPanel LastChildFill="False">
+    
+    <!--<DockPanel LastChildFill="False">
         <Button Content=" Coucou1" DockPanel.Dock="Top"></Button>
         <Button Content=" Coucou11" DockPanel.Dock="Top"></Button>
         <Button Content=" Coucou2" DockPanel.Dock="Left"></Button>
         <Button Content=" Coucou3" DockPanel.Dock="Right"></Button>
         <Button Content=" Coucou4" DockPanel.Dock="Bottom"></Button>
         <Button Content=" Coucou5" ></Button>
-    </DockPanel>
+    </>-->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+        <Button Content=" Coucou1" Grid.Column="0" />
+        <Button Content=" Coucou2" Grid.Column="1"  Grid.Row="1"/>
+        
+        <Button Content=" Coucou3" Grid.Column="2" Grid.Row="2" />
+
+    </Grid>
 </Window>
