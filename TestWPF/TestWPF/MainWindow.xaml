@@ -54,15 +54,17 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="15"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
             
-        <Button Content=" Coucou1" Grid.Column="0" />
-        <Button Content=" Coucou2" Grid.Column="1"  Grid.Row="1"/>
+            </Grid.RowDefinitions>
+        <TextBlock Text="Bienvenue à doranco" HorizontalAlignment="Center" Grid.ColumnSpan="3"></TextBlock>
+        <Button Content=" Coucou1" Grid.Column="0" Grid.Row="1"/>
+        <Button Content=" Coucou2" Grid.Column="1"  Grid.Row="2"/>
+        <Button Content=" Coucou3" Grid.Column="2" Grid.Row="3" />
         
-        <Button Content=" Coucou3" Grid.Column="2" Grid.Row="2" />
 
     </Grid>
 </Window>
