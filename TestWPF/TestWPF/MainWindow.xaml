@@ -11,10 +11,13 @@
         <system:String x:Key="propiete3">Martyre</system:String>
     </Window.Resources>
     
-    <Grid x:Name="button">
+    <!--<Grid x:Name="button">
         <Button Content="{StaticResource propiete1}" Margin="605,91,0,0" VerticalAlignment="Top" Width="75"/>
         <local:coucou local:Salutation=" hello" Content="BUTTON"></local:coucou>
         
 
-    </Grid>
+    </>-->
+    <Canvas>
+        <Button Content="{StaticResource propiete1}" Canvas.Left =" 354"  Canvas.Top="85"/>
+    </Canvas>
 </Window>
