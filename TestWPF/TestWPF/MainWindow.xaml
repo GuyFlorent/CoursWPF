@@ -21,10 +21,17 @@
         <Button Content="{StaticResource propiete1}" Canvas.Left =" 354"  Canvas.Top="85"/>
     </>-->
 
-    <WrapPanel Orientation="Vertical">
+    <!--<WrapPanel Orientation="Vertical">
         <Button Content=" Coucou" Width="150"></Button>
         <Button Content=" Coucou" Width="150"></Button>
         <Button Content=" Coucou" Width="150"></Button>
         <Button Content=" Coucou" Width="150"></Button>
-    </WrapPanel>
+    </>-->
+
+    <StackPanel>
+        <Button Content=" Coucou" ></Button>
+        <Button Content=" Coucou" ></Button>
+        <Button Content=" Coucou" ></Button>
+        <Button Content=" Coucou" ></Button>
+    </StackPanel>
 </Window>
