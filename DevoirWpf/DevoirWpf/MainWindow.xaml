@@ -17,7 +17,9 @@
             </ToolBar>
         </ToolBarTray>
         <StatusBar DockPanel.Dock ="Bottom"></StatusBar>
-        <TreeView DockPanel.Dock ="Left" Width="250"></TreeView>
+        <TreeView DockPanel.Dock ="Left" Width="250">
+            <Image Source="C:/Users/stagiaire/Desktop/images/aba.jpg" />
+        </TreeView>
         <TabControl>
             <TabItem>
                <TabItem.Header>

@@ -26,8 +26,11 @@ namespace DevoirWpf
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
+        {
+            var message =
+            $"Mon message: {sender.ToString()}\r\nSource: {e.Source}\r\r";
+            MessageBox.Show(message, "event ! ");
         }
     }
 }
