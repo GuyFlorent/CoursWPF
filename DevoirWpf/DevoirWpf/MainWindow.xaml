@@ -72,12 +72,24 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Text="Login:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-                                <TextBlock Grid.Column="1" Grid.Row="0" Text="USER"/>
+                                <TextBox Grid.Column="1" Grid.Row="0" Text="USER"/>
                                 <TextBlock Text="Mot de passe:" Grid.Column="0" Grid.Row="1" />
-                                <TextBlock Grid.Column="1" Grid.Row="1" Text="PASSWORD"/>
+                                <TextBox Grid.Column="1" Grid.Row="1" Text="PASSWORD"/>
                             </Grid>
                         </StackPanel>
                     </GroupBox>
+                    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Margin" Value="5,0,0,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+                            
+                            <Button Content="{StaticResource Connect}" Width="100"></Button>
+                            <Button Content="{StaticResource RunAnalysis}" Width="100"></Button>
+                            <Button Content="{StaticResource CacheExplorer}" Width="100"></Button>
+                       
+                    </StackPanel>
                 </Grid>
             </TabItem>
 
