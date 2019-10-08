@@ -20,18 +20,27 @@ namespace DevoirWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ViewModel.Main _vm;
+        
         public MainWindow()
         {
             InitializeComponent();
+            _vm = new ViewModel.Main();// création d'une instance
+            DataContext = _vm; // DataContext est une propriété qui va déterminer le contexte pour les données
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
 
         {
+            
             var message =
             $"Mon message: {sender.ToString()}\r\nSource: {e.Source}\r\r";
             MessageBox.Show(message, "event ! ");
+            MessageBox.Show(App.Localized["msgPleaseEnterServerName"]);
+            // La facon la plus simple de trouver un contenu dans ressources avec FindResource
+            MessageBox.Show(FindResource("msgPleaseEnterServerName").ToString(), "avec un FindRessource");
             e.Handled = true;
         }
+
     }
 }
