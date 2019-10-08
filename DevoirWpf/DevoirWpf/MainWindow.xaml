@@ -16,8 +16,34 @@
                 <Button Content="{StaticResource About}"></Button>
             </ToolBar>
         </ToolBarTray>
-        <TreeView DockPanel.Dock ="Left"></TreeView>
         <StatusBar DockPanel.Dock ="Bottom"></StatusBar>
+        <TreeView DockPanel.Dock ="Left" Width="250"></TreeView>
+        <TabControl>
+            <TabItem>
+               <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="C:/Users/stagiaire/Desktop/images/SQLServer.ico"/>
+                        <TextBlock Text="{StaticResource Connection}"/>
+ 
+                    </StackPanel>
+                    
+                
+            </TabItem.Header>
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="C:/Users/stagiaire/Desktop/images/open.ico"/>
+                        <TextBlock Text="{StaticResource Results}"/>
+
+                    </StackPanel>
+
+
+                </TabItem.Header>
+            </TabItem>
+
+        </TabControl>
     </DockPanel>
 
 </Window>
