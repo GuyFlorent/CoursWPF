@@ -46,8 +46,12 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel>
-                        <TextBlock Text=" texte"/>
-                        <ComboBox Text="texte" IsEditable="True"/>
+                        <TextBlock Text=" texte" Grid.Row="0"/>
+                        <ComboBox Text="texte" IsEditable="True" Grid.Column="0" Grid.Row="0">
+                        <ComboBoxItem Content="exemple1" ></ComboBoxItem>
+                        <ComboBoxItem Content="exemple1" ></ComboBoxItem>
+                        <ComboBoxItem Content="exemple1" ></ComboBoxItem>
+                        </ComboBox>
                     </StackPanel>
                 </Grid>
             </TabItem>
