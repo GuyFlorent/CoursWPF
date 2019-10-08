@@ -31,6 +31,7 @@ namespace DevoirWpf
             var message =
             $"Mon message: {sender.ToString()}\r\nSource: {e.Source}\r\r";
             MessageBox.Show(message, "event ! ");
+            e.Handled = true;
         }
     }
 }

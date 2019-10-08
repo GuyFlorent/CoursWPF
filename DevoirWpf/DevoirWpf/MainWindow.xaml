@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <DockPanel LastChildFill="False">
+    <DockPanel ButtonBase.Click="Button_Click">
         <ToolBarTray DockPanel.Dock =" top" HorizontalAlignment="Right">
             <ToolBar>
                 <Button Content="{StaticResource ClearStats}"></Button>
