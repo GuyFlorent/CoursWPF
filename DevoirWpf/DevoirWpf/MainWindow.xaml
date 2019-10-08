@@ -85,11 +85,24 @@
                             </Style>
                         </StackPanel.Resources>
                             
-                            <Button Content="{StaticResource Connect}" Width="100"></Button>
-                            <Button Content="{StaticResource RunAnalysis}" Width="100"></Button>
-                            <Button Content="{StaticResource CacheExplorer}" Width="100"></Button>
+                            <Button Content="{StaticResource Connect}" Width="100" Click="Button_Click"></Button>
+                        <Button Content="{StaticResource RunAnalysis}" Width="100" IsEnabled="False"></Button>
+                            <Button Content="{StaticResource CacheExplorer}" Width="100" IsEnabled="False"></Button>
                        
                     </StackPanel>
+
+                    <TextBlock Text="TEXTE" Grid.Row="4" Grid.Column="0">
+                    </TextBlock>
+                
+                    <Label Content="{StaticResource Database}" Grid.Row="5"/>
+
+                    <DataGrid Grid.Row="6">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{StaticResource Database}"/>
+                            <DataGridTextColumn Header="{StaticResource Database}"/>
+                            <DataGridTextColumn Header="{StaticResource Compatibility}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
 
