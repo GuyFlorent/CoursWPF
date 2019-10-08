@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:DevoirWpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
+    
 
     <DockPanel ButtonBase.Click="Button_Click">
         <ToolBarTray DockPanel.Dock =" top" HorizontalAlignment="Right">
@@ -87,7 +89,9 @@
                             </Style>
                         </StackPanel.Resources>
                             
-                            <Button Content="{StaticResource Connect}" Width="100" Click="Button_Click"></Button>
+                            <Button Content="{StaticResource Connect}" Template="{StaticResource JoliBouton}" Width="100" Click="Button_Click">
+                            
+                            </Button>
                         <Button Content="{StaticResource RunAnalysis}" Width="100" IsEnabled="False"></Button>
                             <Button Content="{StaticResource CacheExplorer}" Width="100" IsEnabled="False"></Button>
                        

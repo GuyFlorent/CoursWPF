@@ -3,6 +3,18 @@
                     xmlns:local="clr-namespace:sqltrismegiste.ressources"
                     xmlns:s="clr-namespace:System;assembly=mscorlib">
 
+    <ControlTemplate x:Key="JoliBouton" TargetType="Button">
+        <Grid>
+            <Ellipse Fill="Blue">
+                <Ellipse.BitmapEffect>
+                    <BlurBitmapEffect Radius="5"/>
+
+                </Ellipse.BitmapEffect>
+            </Ellipse>
+            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center"/>
+        </Grid>
+    </ControlTemplate>
+
     <Style x:Key="Style1" TargetType="Control">
         <Setter Property="Background" Value="Yellow"></Setter>
     </Style>
