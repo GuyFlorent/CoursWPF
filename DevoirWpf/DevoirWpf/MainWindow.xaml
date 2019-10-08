@@ -48,11 +48,36 @@
                     <StackPanel>
                         <TextBlock Text=" texte" Grid.Row="0"/>
                         <ComboBox Text="texte" IsEditable="True" Grid.Column="0" Grid.Row="0">
+                            <!-- C'est possible d'ajouter avec comboxItem les chose dans le menu-->
+                        <!--<ComboBoxItem Content="exemple1" ></>
                         <ComboBoxItem Content="exemple1" ></ComboBoxItem>
-                        <ComboBoxItem Content="exemple1" ></ComboBoxItem>
-                        <ComboBoxItem Content="exemple1" ></ComboBoxItem>
+                        <ComboBoxItem Content="exemple1" ></ComboBoxItem>-->
                         </ComboBox>
                     </StackPanel>
+                    <GroupBox Header="{StaticResource Authentication}" Grid.Row="1" Grid.Column="0">
+                        <StackPanel>
+                            <RadioButton Content="{StaticResource WindowsAuthentication}">
+                            
+                        </RadioButton>
+                        <RadioButton Content="{StaticResource SqlAuthentication}">
+                            
+                        </RadioButton>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" MinWidth="276"/>
+                                    <ColumnDefinition Width="auto" MinWidth="276"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Login:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Grid.Row="0" Text="USER"/>
+                                <TextBlock Text="Mot de passe:" Grid.Column="0" Grid.Row="1" />
+                                <TextBlock Grid.Column="1" Grid.Row="1" Text="PASSWORD"/>
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
                 </Grid>
             </TabItem>
 
