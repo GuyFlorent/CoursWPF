@@ -29,6 +29,27 @@
                     
                 
             </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" MinWidth="276"/>
+                        <ColumnDefinition Width="auto" MinWidth="276"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text=" texte"/>
+                        <ComboBox Text="texte" IsEditable="True"/>
+                    </StackPanel>
+                </Grid>
             </TabItem>
 
             <TabItem>
