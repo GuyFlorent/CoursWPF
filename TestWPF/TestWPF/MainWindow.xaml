@@ -68,7 +68,7 @@
             
             </Grid.RowDefinitions>
         <TextBlock Text="Bienvenue à doranco"  HorizontalAlignment="Center" Grid.ColumnSpan="3"></TextBlock>
-        <Button Content=" Coucou1" Grid.Column="0" Grid.Row="1" Background="Blue"/>
+        <Button Content=" Coucou1" Grid.Column="0" Grid.Row="1" Background="Red"/>
         <Button Content=" Coucou2" Grid.Column="1"  Grid.Row="2"/>
         <Button Content=" Coucou3" Grid.Column="3" Grid.Row="3" Style="{StaticResource Style1}"/>
         <GridSplitter Grid.Column="2" Grid.Row="2" Width="20" HorizontalAlignment="Stretch"   />
