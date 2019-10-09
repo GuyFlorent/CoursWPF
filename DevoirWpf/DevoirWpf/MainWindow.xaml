@@ -90,7 +90,7 @@
                             </Style>
                         </StackPanel.Resources>
 
-                        <Button Content="{StaticResource Connect}"  Style="{StaticResource Triggers}" Width="100" Click="Button_Click" Height="21" VerticalAlignment="Bottom">
+                        <Button Content="{StaticResource Connect}"  Style="{StaticResource zoom}" Width="100" Click="Button_Click" Height="21" VerticalAlignment="Bottom">
                             
                             </Button>
                         <Button Content="{StaticResource RunAnalysis}" Template="{StaticResource Joli}" Width="100" IsEnabled="True"></Button>

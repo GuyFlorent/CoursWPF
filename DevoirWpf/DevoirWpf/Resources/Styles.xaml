@@ -40,7 +40,7 @@
     </Style>
     
     
-    <!--ajout du Triggers avec comme property IsMouseOver pour avoir l'effet l'ors du passage de la souris
+    <!--ajout du Triggers de style avec comme property IsMouseOver pour avoir l'effet l'ors du passage de la souris
     utilisation des des DataTriggers pour allumer connextion 
     uniquement lorsque on a écris quelque chose sur la combobOX-->
     <Style x:Key="Triggers" TargetType="Button">
@@ -59,7 +59,7 @@
     </Style>
 
 
- <!-- ici on a modifié le bouton radio et mis des actions sur le bouton avec le style Triggers-->
+ <!--DataTriggers ici on a modifié le bouton radio et mis des actions sur le bouton avec le style Triggers-->
     <Style x:Key="Tri" TargetType="TextBlock">
         <Style.Triggers>
 
@@ -79,6 +79,68 @@
     </Style>
 
 
+<!--TrigerEvenement Effet Zoom sur les bouton avec ce bout de code Annimation!!!!!-->
+    <Style x:Key="zoom"
 
+            TargetType="Button">
+        <Setter
 
-</ResourceDictionary>
+                Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform x:Name="transform"></ScaleTransform>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger
+
+                    RoutedEvent="MouseEnter">
+                <BeginStoryboard
+
+                            Name="zoomIn">
+                    <Storyboard>
+                        <DoubleAnimation
+
+                                    Storyboard.TargetProperty="RenderTransform.ScaleX"
+
+                                    To="3"
+
+                                    Duration="00:00:00.25"></DoubleAnimation>
+                        <DoubleAnimation
+
+                                    Storyboard.TargetProperty="RenderTransform.ScaleY"
+
+                                    To="3"
+
+                                    Duration="00:00:00.25"></DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger
+
+                    RoutedEvent="MouseLeave">
+                <BeginStoryboard
+
+                        Name="zoomOut">
+                    <Storyboard>
+                        <DoubleAnimation
+
+                                Storyboard.TargetProperty="RenderTransform.ScaleX"
+
+                                To="1"
+
+                                Duration="00:00:00.25"></DoubleAnimation>
+                        <DoubleAnimation
+
+                                Storyboard.TargetProperty="RenderTransform.ScaleY"
+
+                                To="1"
+
+                                Duration="00:00:00.25"></DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    
+    </ResourceDictionary>
