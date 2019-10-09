@@ -89,10 +89,10 @@
                             </Style>
                         </StackPanel.Resources>
                             
-                            <Button Content="{StaticResource Connect}" Template="{StaticResource JoliBouton}" Width="100" Click="Button_Click">
+                            <Button Content="{StaticResource Connect}" Template="{StaticResource JoliBouton}" Width="100" Click="Button_Click" Height="21" VerticalAlignment="Bottom">
                             
                             </Button>
-                        <Button Content="{StaticResource RunAnalysis}" Width="100" IsEnabled="False"></Button>
+                        <Button Content="{StaticResource RunAnalysis}" Template="{StaticResource Joli}" Width="100" IsEnabled="True"></Button>
                             <Button Content="{StaticResource CacheExplorer}" Width="100" IsEnabled="False"></Button>
                        
                     </StackPanel>

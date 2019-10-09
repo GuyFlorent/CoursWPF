@@ -15,6 +15,19 @@
         </Grid>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="Joli" TargetType="Button">
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="{TemplateBinding Background}" Offset="0.5"/>
+                    <!-- Error! -->
+                    <GradientStop Color="Pink" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center"/>
+        </Grid>
+    </ControlTemplate>
+
     <Style x:Key="Style1" TargetType="Control">
         <Setter Property="Background" Value="Yellow"></Setter>
     </Style>
