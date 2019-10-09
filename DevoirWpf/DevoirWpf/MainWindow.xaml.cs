@@ -28,7 +28,10 @@ namespace DevoirWpf
         {
             InitializeComponent();
             _vm = new ViewModel.Main();// création d'une instance
+
             DataContext = _vm; // DataContext est une propriété qui va déterminer le contexte pour les données
+
+            this.DataContext = this;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

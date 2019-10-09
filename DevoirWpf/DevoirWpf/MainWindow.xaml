@@ -115,13 +115,14 @@
                     </DataGrid>
                     <!--Ajout de deux autres ligne sur la gird.row et ici on met le numero de la ligne pour
                     continuer-->
-                    <WrapPanel Grid.Row="7" >
+                    <WrapPanel Margin =" 0,10,0,0" Grid.Row="7" >
                         <TextBlock Text="TItre de la fenetre : "/>
                         <TextBox Width="150"/>
                     </WrapPanel>
                     <WrapPanel Grid.Row="8" >
                         <TextBlock Text="Taille de la fenetre : "/>
-                        <TextBox Width="50"/>
+                        <TextBox Text ="{Binding Width}"  Width="50"/>
+                        <!--liaison du dataContext avec la fenetre + le this.DataContext = this; pour les coordonné de la fenetre-->
                         <TextBox Text="x"/>
                         <TextBox Width="50"/>
                     </WrapPanel>
