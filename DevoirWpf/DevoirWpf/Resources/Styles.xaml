@@ -17,13 +17,15 @@
 
     <ControlTemplate x:Key="Joli" TargetType="Button">
         <Grid>
-            <Grid.Background>
-                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
-                    <GradientStop Color="{TemplateBinding Background}" Offset="0.5"/>
-                    <!-- Error! -->
-                    <GradientStop Color="Pink" Offset="1.0"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+            <Ellipse>
+                <Ellipse.Fill>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                        <GradientStop Color="{TemplateBinding Background}" Offset="0.5"/>
+                        <!-- Error! -->
+                        <GradientStop Color="Pink" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
             <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center"/>
         </Grid>
     </ControlTemplate>
