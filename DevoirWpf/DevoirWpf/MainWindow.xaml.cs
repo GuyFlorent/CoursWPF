@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,7 +23,7 @@ namespace DevoirWpf
     public partial class MainWindow : Window
     {
         private ViewModel.Main _vm;
-        
+        private MediaPlayer mediaPlayer = new MediaPlayer();
         public MainWindow()
         {
             InitializeComponent();
@@ -33,12 +35,22 @@ namespace DevoirWpf
 
         {
             
+
             var message =
             $"Mon message: {sender.ToString()}\r\nSource: {e.Source}\r\r";
             MessageBox.Show(message, "event ! ");
             MessageBox.Show(App.Localized["msgPleaseEnterServerName"]);
             // La facon la plus simple de trouver un contenu dans ressources avec FindResource
             MessageBox.Show(FindResource("msgPleaseEnterServerName").ToString(), "avec un FindRessource");
+
+            //extrait de code pour chercher un liens et mettre de la musique
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                mediaPlayer.Open(new Uri(openFileDialog.FileName));
+                mediaPlayer.Play();
+            }
             e.Handled = true;
         }
 
