@@ -48,7 +48,7 @@ namespace DevoirWpf
             openFileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                mediaPlayer.Open(new Uri(openFileDialog.FileName));
+                mediaPlayer.Open(new Uri("//C: /Users/stagiaire/Desktop/images/music.mp3"));
                 mediaPlayer.Play();
             }
             e.Handled = true;
