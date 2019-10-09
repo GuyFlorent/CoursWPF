@@ -9,8 +9,9 @@
     
     
 
-    <DockPanel ButtonBase.Click="Button_Click">
-        <ToolBarTray DockPanel.Dock =" top" HorizontalAlignment="Right">
+    <!--DockPanel ButtonBase.Click="Button_Click">-->
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock =" top" HorizontalAlignment="Right">
             <ToolBar>
                 <Button Content="{StaticResource ClearStats}"></Button>
                 <Button Content="{StaticResource SaveLastAnalysis}"></Button>
@@ -60,10 +61,10 @@
                     </StackPanel>
                     <GroupBox Header="{StaticResource Authentication}" Grid.Row="1" Grid.Column="0">
                         <StackPanel>
-                            <RadioButton Content="{StaticResource WindowsAuthentication}">
+                            <RadioButton x:Name="msg" Content="{StaticResource WindowsAuthentication}">
                             
                         </RadioButton>
-                        <RadioButton Content="{StaticResource SqlAuthentication}">
+                            <RadioButton x:Name="msg2" Content="{StaticResource SqlAuthentication}">
                             
                         </RadioButton>
                             <Grid>
@@ -97,7 +98,7 @@
                        
                     </StackPanel>
 
-                    <TextBlock Text="TEXTE" Grid.Row="4" Grid.Column="0">
+                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource Tri}">
                     </TextBlock>
                 
                     <Label Content="{StaticResource Database}" Grid.Row="5"/>

@@ -40,7 +40,9 @@
     </Style>
     
     
-    <!--ajout du Triggers avec comme property IsMouseOver pour avoir l'effet l'ors du passage de la souris-->
+    <!--ajout du Triggers avec comme property IsMouseOver pour avoir l'effet l'ors du passage de la souris
+    utilisation des des DataTriggers pour allumer connextion 
+    uniquement lorsque on a écris quelque chose sur la combobOX-->
     <Style x:Key="Triggers" TargetType="Button">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
@@ -52,10 +54,31 @@
                                                Value="">
                 <Setter Property="IsEnabled" Value="False" />
             </DataTrigger>
+ 
         </Style.Triggers>
     </Style>
-    
-   
 
-    
+
+ <!-- ici on a modifié le bouton radio et mis des actions sur le bouton avec le style Triggers-->
+    <Style x:Key="Tri" TargetType="TextBlock">
+        <Style.Triggers>
+
+            <DataTrigger Binding="{Binding ElementName=msg,Path=IsChecked }" Value="True">
+
+
+                <Setter Property="Text" Value="window" />
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding ElementName=msg2,Path=IsChecked }" Value="True">
+                                              
+                                               
+                <Setter Property="Text" Value="SQL" />
+            </DataTrigger>
+
+        </Style.Triggers>
+    </Style>
+
+
+
+
 </ResourceDictionary>
