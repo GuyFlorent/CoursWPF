@@ -51,7 +51,7 @@
 
                     <StackPanel>
                         <TextBlock Text=" texte" Grid.Row="0"/>
-                        <ComboBox Text="texte" IsEditable="True" Grid.Column="0" Grid.Row="0">
+                        <ComboBox x:Name="Combo1" IsEditable="True" Grid.Column="0" Grid.Row="0">
                             <!-- C'est possible d'ajouter avec comboxItem les chose dans le menu-->
                         <!--<ComboBoxItem Content="exemple1" ></>
                         <ComboBoxItem Content="exemple1" ></ComboBoxItem>
@@ -88,8 +88,8 @@
                                 <Setter Property="Margin" Value="5,0,0,0"/>
                             </Style>
                         </StackPanel.Resources>
-                            
-                            <Button Content="{StaticResource Connect}" Template="{StaticResource JoliBouton}" Style="{StaticResource Triggers }" Width="100" Click="Button_Click" Height="21" VerticalAlignment="Bottom">
+
+                        <Button Content="{StaticResource Connect}"  Style="{StaticResource Triggers}" Width="100" Click="Button_Click" Height="21" VerticalAlignment="Bottom">
                             
                             </Button>
                         <Button Content="{StaticResource RunAnalysis}" Template="{StaticResource Joli}" Width="100" IsEnabled="True"></Button>

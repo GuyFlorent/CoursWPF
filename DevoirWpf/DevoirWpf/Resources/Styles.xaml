@@ -38,13 +38,24 @@
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="FontSize" Value="20" />
     </Style>
+    
+    
     <!--ajout du Triggers avec comme property IsMouseOver pour avoir l'effet l'ors du passage de la souris-->
     <Style x:Key="Triggers" TargetType="Button">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
                 <Setter Property = "Foreground" Value="Green"/>
+               <Setter Property="TextBlock.TextDecorations" Value="Underline" />
             </Trigger>
+            <DataTrigger Binding="{Binding ElementName=Combo1,Path=Text }"
+                                              
+                                               Value="">
+                <Setter Property="IsEnabled" Value="False" />
+            </DataTrigger>
         </Style.Triggers>
     </Style>
+    
+   
 
+    
 </ResourceDictionary>
