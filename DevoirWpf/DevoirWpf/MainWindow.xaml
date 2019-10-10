@@ -49,6 +49,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                         
                     </Grid.RowDefinitions>
 
@@ -124,8 +125,16 @@
                         <TextBox Text ="{Binding Width}"  Width="50"/>
                         <!--liaison du dataContext avec la fenetre + le this.DataContext = this; pour les coordonné de la fenetre-->
                         <TextBox Text="x"/>
-                        <TextBox Width="50"/>
+                        <TextBox Text="{Binding Height}" Width="50"/>
+                  
                     </WrapPanel>
+                    <!--Ajout d'une ligne pour mettre un slide et lier le slider avec mettre le nom
+                    du Slider dans le binding --> 
+                  <WrapPanel Grid.Row="9">
+                        <Slider x:Name="mySlider" Width="50" ></Slider>
+                        <TextBox x:Name="myTextBox" Text="{Binding ElementName=mySlider,Path=Value}" Width="100" ></TextBox>
+                  </WrapPanel>
+                  
                 </Grid>
                
 
