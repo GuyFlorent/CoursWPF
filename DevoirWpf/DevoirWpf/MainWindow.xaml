@@ -97,8 +97,8 @@
                         <Button Content="{StaticResource Connect}"  Style="{StaticResource zoom}" Width="100" Click="Button_Click" Height="21" VerticalAlignment="Bottom">
                             
                             </Button>
-                        <Button Content="{StaticResource RunAnalysis}" Template="{StaticResource Joli}" Width="100" IsEnabled="True"></Button>
-                            <Button Content="{StaticResource CacheExplorer}" Width="100" IsEnabled="False"></Button>
+                        <Button Content="{StaticResource RunAnalysis}" Template="{StaticResource Joli}" Width="100" IsEnabled="True" Margin="5,0,0,1" Click="Button_Click_1"/>
+                        <Button Content="{StaticResource CacheExplorer}" Width="100" IsEnabled="False"></Button>
                        
                     </StackPanel>
 
@@ -166,6 +166,8 @@
                         <TextBlock Text="Age" Width="60"></TextBlock>
                         <TextBox x:Name="age1" Text ="{Binding Path=Age}" Width="60"></TextBox>
                     </WrapPanel>
+
+                    <ListBox Grid.Column="1" Height="200"  ></ListBox>
                 </Grid>
                
 

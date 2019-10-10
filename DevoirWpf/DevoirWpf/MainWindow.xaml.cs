@@ -22,19 +22,21 @@ namespace DevoirWpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ViewModel.Main _vm;
+      //  private ViewModel.Main _vm;
         private MediaPlayer mediaPlayer = new MediaPlayer();
         public MainWindow()
         {
             InitializeComponent();
-            _vm = new ViewModel.Main();// création d'une instance
+          //  _vm = new ViewModel.Main();// création d'une instance
 
-            DataContext = _vm; // DataContext est une propriété qui va déterminer le contexte pour les données
+           // DataContext = _vm; // DataContext est une propriété qui va déterminer le contexte pour les données
 
             //this.DataContext = "coucou";
             // this.DataContext = this;
 
-            this.DataContext = new Employee { Name = "NOMEDE", FirstName = "Nydia", Age = "25" };
+            this.DataContext = new Employee (25,"NOMEDE","Nydia" );
+            ListBox listBox = new ListBox();
+            listBox.AddHandler()
           
         }
 
@@ -62,5 +64,10 @@ namespace DevoirWpf
             e.Handled = true;*/
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {         
+            MessageBox.Show((this.DataContext as Employee).Name = "DODO");
+           
+        }
     }
 }
