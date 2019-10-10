@@ -132,11 +132,15 @@
                     du Slider dans le binding --> 
                   <WrapPanel Grid.Row="9">
                       <!-- POSSIBLE DE CHANGER DANS LES DEUX SENS AVEC UPDATESOURCETRIGGER=PropertyChange dans le TextBox-->
-                        <Slider x:Name="mySlider"  Maximum="100" Value="{Binding ElementName=myTextBox, Path=Width}"  Width="50" ></Slider>
+                        <Slider x:Name="mySlider"  Maximum="100"   Width="50" ></Slider>
                       <!--DEUXIME FACON DE LA FAIRE EST D4utiliser LE MODE -->
-                        <TextBox x:Name="myTextBox" Text="{Binding ElementName=mySlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Path=Value}" Width="100" ></TextBox>
+                      <!--  <TextBox x:Name="myTextBox" Text="{Binding ElementName=mySlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Path=Value}" Width="100" ></TextBox>-->
                         <!-- <TextBox x:Name="myTextBox" Text="{Binding ElementName=mySlider,Path=Value}" Width="100" ></TextBox>-->
-                  </WrapPanel>
+                       
+                      
+                      <TextBox x:Name="myTextBox" Text="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Title}" >
+                        </TextBox> <!--modifié le titre de mla fenetre grace à un TextBox-->
+                    </WrapPanel>
                   
                 </Grid>
                
