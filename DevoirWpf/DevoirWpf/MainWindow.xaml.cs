@@ -32,15 +32,19 @@ namespace DevoirWpf
             DataContext = _vm; // DataContext est une propriété qui va déterminer le contexte pour les données
 
             //this.DataContext = "coucou";
-            this.DataContext = this;
+            // this.DataContext = this;
+
+            this.DataContext = new Employee { Name = "NOMEDE", FirstName = "Nydia", Age = "25" };
+          
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
 
         {
+          
+            MessageBox.Show((this.DataContext as Employee).Name);
             
-
-            var message =
+           /* var message =
             $"Mon message: {sender.ToString()}\r\nSource: {e.Source}\r\r";
             MessageBox.Show(message, "event ! ");
             MessageBox.Show(App.Localized["msgPleaseEnterServerName"]);
@@ -55,7 +59,7 @@ namespace DevoirWpf
                 mediaPlayer.Open(new Uri("//C: /Users/stagiaire/Desktop/images/music.mp3"));
                 mediaPlayer.Play();
             }
-            e.Handled = true;
+            e.Handled = true;*/
         }
 
     }

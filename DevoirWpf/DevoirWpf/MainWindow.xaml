@@ -50,7 +50,8 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
-                        
+                        <RowDefinition Height="auto"/>
+
                     </Grid.RowDefinitions>
 
                     <StackPanel>
@@ -155,6 +156,15 @@
 
                     <WrapPanel Grid.Row="9">
                         <TextBox Text="{Binding Path=Title}"/>
+                    </WrapPanel>
+
+                    <WrapPanel Grid.Row="10">
+                        <TextBlock Text="Nom" Width="60"></TextBlock>
+                        <TextBox x:Name="nom" Text ="{Binding Path=Name}" Width="60"></TextBox>
+                        <TextBlock Text="Prénom" Width="60"></TextBlock>
+                        <TextBox x:Name="prenom" Text ="{Binding Path=FirstName}" Width="60"></TextBox>
+                        <TextBlock Text="Age" Width="60"></TextBlock>
+                        <TextBox x:Name="age1" Text ="{Binding Path=Age}" Width="60"></TextBox>
                     </WrapPanel>
                 </Grid>
                
