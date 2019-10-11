@@ -39,11 +39,14 @@ namespace DevoirWpf
 
             //this.DataContext = new Employee (25,"NOMEDE","Nydia" );
             this.DataContext = mainViewModel;
+            mainViewModel.init(); //pour initialiser et permettre d'ajouter un element meme si il ya rien dans la liste
 
 
             mainViewModel.Add_Content("Nidia", "nomene", 22);
             mainViewModel.Add_Content("Nidia", "nomene", 22);
             mainViewModel.Add_Content("Nidia", "nomene", 22);
+
+           
 
         }
 
@@ -75,6 +78,17 @@ namespace DevoirWpf
         {         
             MessageBox.Show((this.DataContext as Employee).Name = "DODO");
            
+        }
+
+        private void Valide_Click(object sender, RoutedEventArgs e)
+        {
+            mainViewModel.Add_Content(AddNom.Text, AddPrenom.Text, Int32.Parse(AddAge.Text));
+            
+        }
+
+        private void Suprimé_Click(object sender, RoutedEventArgs e)
+        {
+            mainViewModel.Remove_Content(AddNom.Text, AddPrenom.Text, Int32.Parse(AddAge.Text));
         }
     }
 }

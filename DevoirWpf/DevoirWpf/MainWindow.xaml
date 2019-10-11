@@ -180,6 +180,19 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
+
+                    <WrapPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="Nom"></TextBlock>
+                        <TextBox x:Name="AddNom" Width="20" ></TextBox>
+                        <TextBlock Text="Prenom"></TextBlock>
+                        <TextBox x:Name="AddPrenom" Width="30" ></TextBox>
+                        <TextBlock Text="Age"></TextBlock>
+                        <TextBox x:Name="AddAge" Width="20" ></TextBox>
+                        <Button x:Name="valide" Content="valid" Click="Valide_Click"  ></Button>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="2" Grid.Column="1">
+                        <Button x:Name="suprimé" Content="suprimé" Click="Suprimé_Click"></Button>
+                    </WrapPanel>
                 </Grid>
 
 
