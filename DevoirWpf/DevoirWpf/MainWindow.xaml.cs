@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using DevoirWpf.ViewModel;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,21 +23,28 @@ namespace DevoirWpf
     /// </summary>
     public partial class MainWindow : Window
     {
-      //  private ViewModel.Main _vm;
-        private MediaPlayer mediaPlayer = new MediaPlayer();
+        //  private ViewModel.Main _vm;
+        //  private MediaPlayer mediaPlayer = new MediaPlayer();
+
+        private MainViewModel mainViewModel = new MainViewModel();
         public MainWindow()
         {
             InitializeComponent();
-          //  _vm = new ViewModel.Main();// création d'une instance
+            //  _vm = new ViewModel.Main();// création d'une instance
 
-           // DataContext = _vm; // DataContext est une propriété qui va déterminer le contexte pour les données
+            // DataContext = _vm; // DataContext est une propriété qui va déterminer le contexte pour les données
 
             //this.DataContext = "coucou";
             // this.DataContext = this;
 
-            this.DataContext = new Employee (25,"NOMEDE","Nydia" );
-           
-          
+            //this.DataContext = new Employee (25,"NOMEDE","Nydia" );
+            this.DataContext = mainViewModel;
+
+
+            mainViewModel.Add_Content("Nidia", "nomene", 22);
+            mainViewModel.Add_Content("Nidia", "nomene", 22);
+            mainViewModel.Add_Content("Nidia", "nomene", 22);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
