@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace DevoirWpf.ViewModel
 {
@@ -49,6 +50,20 @@ namespace DevoirWpf.ViewModel
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
+        }
+
+        public void PopulateEmployee()
+        {
+            //méthode pour lire un fichier xml aves C#
+            var doc = new XmlDocument();
+            doc.Load("C:/Users/stagiaire/Desktop/images/employee.xml");
+            var xmlNodeList = doc.DocumentElement?.SelectNodes("/employees/employee");
+            if (xmlNodeList == null) return;
+
+            foreach(XmlNode employee in xmlNodeList)
+            {
+                Add_Content(employee.Attributes["name"].Value, employee.Attributes["firstname"].Value, Int32.Parse(employee.Attributes["age"].Value));
             }
         }
     }

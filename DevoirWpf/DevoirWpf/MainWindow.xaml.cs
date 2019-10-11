@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -42,41 +43,47 @@ namespace DevoirWpf
             mainViewModel.init(); //pour initialiser et permettre d'ajouter un element meme si il ya rien dans la liste
 
 
-            mainViewModel.Add_Content("Nidia", "nomene", 22);
-            mainViewModel.Add_Content("Nidia", "nomene", 22);
-            mainViewModel.Add_Content("Nidia", "nomene", 22);
+            /*  mainViewModel.Add_Content("Nidia", "nomene", 22);
+              mainViewModel.Add_Content("Nidia", "nomene", 22);
+              mainViewModel.Add_Content("Nidia", "nomene", 22);*/
 
+
+            mainViewModel.PopulateEmployee();
            
+
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
 
         {
-          
-            MessageBox.Show((this.DataContext as Employee).Name);
             
-           /* var message =
-            $"Mon message: {sender.ToString()}\r\nSource: {e.Source}\r\r";
-            MessageBox.Show(message, "event ! ");
-            MessageBox.Show(App.Localized["msgPleaseEnterServerName"]);
-            // La facon la plus simple de trouver un contenu dans ressources avec FindResource
-            MessageBox.Show(FindResource("msgPleaseEnterServerName").ToString(), "avec un FindRessource");
 
-            //extrait de code pour chercher un liens et mettre de la musique
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
-            if (openFileDialog.ShowDialog() == true)
-            {
-                mediaPlayer.Open(new Uri("//C: /Users/stagiaire/Desktop/images/music.mp3"));
-                mediaPlayer.Play();
-            }
-            e.Handled = true;*/
+
+
+            // MessageBox.Show((this.DataContext as Employee).Name);
+
+            /* var message =
+             $"Mon message: {sender.ToString()}\r\nSource: {e.Source}\r\r";
+             MessageBox.Show(message, "event ! ");
+             MessageBox.Show(App.Localized["msgPleaseEnterServerName"]);
+             // La facon la plus simple de trouver un contenu dans ressources avec FindResource
+             MessageBox.Show(FindResource("msgPleaseEnterServerName").ToString(), "avec un FindRessource");
+
+             //extrait de code pour chercher un liens et mettre de la musique
+             OpenFileDialog openFileDialog = new OpenFileDialog();
+             openFileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+             if (openFileDialog.ShowDialog() == true)
+             {
+                 mediaPlayer.Open(new Uri("//C: /Users/stagiaire/Desktop/images/music.mp3"));
+                 mediaPlayer.Play();
+             }
+             e.Handled = true;*/
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {         
-            MessageBox.Show((this.DataContext as Employee).Name = "DODO");
+           // MessageBox.Show((this.DataContext as Employee).Name = "DODO");
            
         }
 
