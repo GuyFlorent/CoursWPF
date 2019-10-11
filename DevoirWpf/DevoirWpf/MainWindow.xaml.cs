@@ -88,7 +88,13 @@ namespace DevoirWpf
 
         private void Suprimé_Click(object sender, RoutedEventArgs e)
         {
-            mainViewModel.Remove_Content(AddNom.Text, AddPrenom.Text, Int32.Parse(AddAge.Text));
+            //suprimer un employer eavec juste un click
+           // mainViewModel.Liste_Employee.Remove((Employee)llist.SelectedItem);
+
+            //deuxieme methode en creant une méthode dans MainViewModel
+
+            mainViewModel.Remove_Content((Employee)llist.SelectedItem);
+
         }
     }
 }

@@ -167,7 +167,7 @@
                         <TextBox x:Name="age1" Text ="{Binding Path=Age}" Width="60"></TextBox>
                     </WrapPanel>
 
-                    <ListBox Grid.Column="1" Width="200" Height="200" ItemsSource="{Binding Liste_Employee}"  >
+                    <ListBox x:Name="llist" Grid.Column="1" Width="200" Height="200" ItemsSource="{Binding Liste_Employee}"  >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <WrapPanel>
@@ -181,7 +181,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
 
-                    <WrapPanel Grid.Row="1" Grid.Column="1">
+                    <WrapPanel  Grid.Row="1" Grid.Column="1">
                         <TextBlock Text="Nom"></TextBlock>
                         <TextBox x:Name="AddNom" Width="20" ></TextBox>
                         <TextBlock Text="Prenom"></TextBlock>

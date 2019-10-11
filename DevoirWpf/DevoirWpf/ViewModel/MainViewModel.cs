@@ -22,15 +22,23 @@ namespace DevoirWpf.ViewModel
         }
         public void Add_Content(string _name, string _firstname, int _age)
         {
-            
+
             m_Liste_employee.Add(new Employee(_name, _firstname, _age));
         }
 
-      
+        public void Remove_Content(Employee employee)
+        {
+            m_Liste_employee.Remove(employee);
+        }
+
         public ObservableCollection<Employee> Liste_Employee
         {
             get { return m_Liste_employee; }
-            set { m_Liste_employee = value; 
+            set
+            {
+                m_Liste_employee = value;
+            }
+
         }
     }
 }
