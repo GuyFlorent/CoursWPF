@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace DevoirWpf.ViewModel
 
         /*init permet a notre appli de renitialiser au départ car 
         si il ya pas d'objet deja créer on ne pouvait pas en ajouter*/
+
+            
         public void init()
         {
             if (m_Liste_employee == null)
@@ -39,6 +42,14 @@ namespace DevoirWpf.ViewModel
                 m_Liste_employee = value;
             }
 
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
         }
     }
 }

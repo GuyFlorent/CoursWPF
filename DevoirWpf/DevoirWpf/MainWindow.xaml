@@ -183,7 +183,7 @@
 
                     <WrapPanel  Grid.Row="1" Grid.Column="1">
                         <TextBlock Text="Nom"></TextBlock>
-                        <TextBox x:Name="AddNom" Width="20" ></TextBox>
+                        <TextBox x:Name="AddNom"  Width="20" ></TextBox>
                         <TextBlock Text="Prenom"></TextBlock>
                         <TextBox x:Name="AddPrenom" Width="30" ></TextBox>
                         <TextBlock Text="Age"></TextBlock>
@@ -193,6 +193,18 @@
                     <WrapPanel Grid.Row="2" Grid.Column="1">
                         <Button x:Name="suprimé" Content="suprimé" Click="Suprimé_Click"></Button>
                     </WrapPanel>
+
+                     <!-- update de la liste grace au binding -->
+                    <WrapPanel  Grid.Row="3" Grid.Column="1">
+                        <TextBlock Text="Nom"></TextBlock>
+                        <TextBox  Width="20"  DataContext="{Binding ElementName=llist, Path=SelectedItem}" Text="{Binding Name}"></TextBox>
+                        <TextBlock Text="prénom: "></TextBlock>
+                        <TextBox  Width="20"  DataContext="{Binding ElementName=llist, Path=SelectedItem}" Text="{Binding FirstName}"></TextBox>
+                        <TextBlock Text="Age"></TextBlock>
+                        <TextBox  Width="20"  DataContext="{Binding ElementName=llist, Path=SelectedItem}" Text="{Binding Age}"></TextBox>
+                    </WrapPanel>
+                    
+
                 </Grid>
 
 
