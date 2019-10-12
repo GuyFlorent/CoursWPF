@@ -17,12 +17,7 @@ namespace DevoirWpf
         private string _Name;
         private int _Age;
         private string _FirstName;
-        public Employee(int age, string name, string firstName)
-        {
-            this._Age = age;
-            this._Name = name;
-            this._FirstName = firstName;
-        }
+       
 
        
           public int Age

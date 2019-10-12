@@ -34,9 +34,8 @@ namespace DevoirWpf
             //this.DataContext = "coucou";
             // this.DataContext = this;
 
-            this.DataContext = new Employee (25,"NOMEDE","Nydia" );
-            ListBox listBox = new ListBox();
-            listBox.AddHandler()
+            this.DataContext = new Employee { Age = 25, Name = "NOMEDE", FirstName = "Nydia" };
+           
           
         }
 

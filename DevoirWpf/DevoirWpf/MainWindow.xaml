@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:DevoirWpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
-    
+
+
 
     <!--DockPanel ButtonBase.Click="Button_Click">-->
-        <DockPanel>
-            <ToolBarTray DockPanel.Dock =" top" HorizontalAlignment="Right">
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock =" top" HorizontalAlignment="Right">
             <ToolBar>
                 <Button Content="{StaticResource ClearStats}"></Button>
                 <Button Content="{StaticResource SaveLastAnalysis}"></Button>
@@ -20,31 +20,32 @@
             </ToolBar>
         </ToolBarTray>
         <StatusBar DockPanel.Dock ="Bottom"></StatusBar>
-        <TreeView DockPanel.Dock ="Left" Width="250">
-            <Image Source="C:/Users/stagiaire/Desktop/images/aba.jpg" />
+        <TreeView DockPanel.Dock ="Left" Width="50">
+           <!-- <Image Source="C:/Users/stagiaire/Desktop/images/aba.jpg" />-->
         </TreeView>
         <TabControl>
             <TabItem>
-               <TabItem.Header>
+                <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="C:/Users/stagiaire/Desktop/images/SQLServer.ico"/>
+                        <!--<Image Source="C:/Users/stagiaire/Desktop/images/SQLServer.ico"/>-->
                         <TextBlock Text="{StaticResource Connection}"/>
- 
+
                     </StackPanel>
-                    
-                
-            </TabItem.Header>
+
+
+                </TabItem.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" MinWidth="276"/>
-                        <ColumnDefinition Width="auto" MinWidth="276"/>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" MinHeight="53"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="auto" MinHeight="21"/>
+                        <RowDefinition Height="auto" MinHeight="16"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
@@ -58,7 +59,7 @@
                         <TextBlock Text=" texte" Grid.Row="0"/>
                         <ComboBox x:Name="Combo1" IsEditable="True" Grid.Column="0" Grid.Row="0">
                             <!-- C'est possible d'ajouter avec comboxItem les chose dans le menu-->
-                        <!--<ComboBoxItem Content="exemple1" ></>
+                            <!--<ComboBoxItem Content="exemple1" ></>
                         <ComboBoxItem Content="exemple1" ></ComboBoxItem>
                         <ComboBoxItem Content="exemple1" ></ComboBoxItem>-->
                         </ComboBox>
@@ -66,11 +67,11 @@
                     <GroupBox Header="{StaticResource Authentication}" Grid.Row="1" Grid.Column="0">
                         <StackPanel>
                             <RadioButton x:Name="msg" Content="{StaticResource WindowsAuthentication}">
-                            
-                        </RadioButton>
+
+                            </RadioButton>
                             <RadioButton x:Name="msg2" Content="{StaticResource SqlAuthentication}">
-                            
-                        </RadioButton>
+
+                            </RadioButton>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto" MinWidth="276"/>
@@ -87,7 +88,7 @@
                             </Grid>
                         </StackPanel>
                     </GroupBox>
-                    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+                    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Grid.RowSpan="2">
                         <StackPanel.Resources>
                             <Style TargetType="Button">
                                 <Setter Property="Margin" Value="5,0,0,0"/>
@@ -95,57 +96,57 @@
                         </StackPanel.Resources>
 
                         <Button Content="{StaticResource Connect}"  Style="{StaticResource zoom}" Width="100" Click="Button_Click" Height="21" VerticalAlignment="Bottom">
-                            
-                            </Button>
+
+                        </Button>
                         <Button Content="{StaticResource RunAnalysis}" Template="{StaticResource Joli}" Width="100" IsEnabled="True" Margin="5,0,0,1" Click="Button_Click_1"/>
                         <Button Content="{StaticResource CacheExplorer}" Width="100" IsEnabled="False"></Button>
-                       
+
                     </StackPanel>
 
-                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource Tri}">
+                    <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource Tri}">
                     </TextBlock>
-                
-                    <Label Content="{StaticResource Database}" Grid.Row="5"/>
 
-                    <DataGrid Grid.Row="6">
+                    <Label Content="{StaticResource Database}" Grid.Row="6"/>
+
+                    <DataGrid Grid.Row="7" RenderTransformOrigin="0.42,1.577">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{StaticResource Database}"/>
                             <DataGridTextColumn Header="{StaticResource Database}"/>
                             <DataGridTextColumn Header="{StaticResource Compatibility}"/>
                         </DataGrid.Columns>
-                      
+
                     </DataGrid>
                     <!--Ajout de deux autres ligne sur la gird.row et ici on met le numero de la ligne pour
                     continuer-->
-                    <WrapPanel Margin =" 0,10,0,0" Grid.Row="7" >
+                    <WrapPanel Margin =" 0,10,0,0" Grid.Row="8" >
                         <TextBlock Text="TItre de la fenetre : "/>
                         <TextBox Width="150"/>
                     </WrapPanel>
-                    <WrapPanel Grid.Row="8" >
+                    <WrapPanel Grid.Row="9" >
                         <TextBlock Text="Taille de la fenetre : "/>
                         <TextBox Text ="{Binding Width}"  Width="50"/>
                         <!--liaison du dataContext avec la fenetre + le this.DataContext = this; pour les coordonné de la fenetre-->
                         <TextBox Text="x"/>
                         <TextBox Text="{Binding Height}" Width="50"/>
-                  
+
                     </WrapPanel>
                     <!--Ajout d'une ligne pour mettre un slide et lier le slider avec mettre le nom
-                    du Slider dans le binding --> 
-                  <WrapPanel Grid.Row="9">
-                      <!-- POSSIBLE DE CHANGER DANS LES DEUX SENS AVEC UPDATESOURCETRIGGER=PropertyChange dans le TextBox-->
+                    du Slider dans le binding -->
+                    <WrapPanel Grid.Row="10">
+                        <!-- POSSIBLE DE CHANGER DANS LES DEUX SENS AVEC UPDATESOURCETRIGGER=PropertyChange dans le TextBox-->
                         <Slider x:Name="mySlider"  Maximum="100"   Width="50" ></Slider>
-                      <!--DEUXIME FACON DE LA FAIRE EST D4utiliser LE MODE -->
-                      <!--  <TextBox x:Name="myTextBox" Text="{Binding ElementName=mySlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Path=Value}" Width="100" ></TextBox>-->
+                        <!--DEUXIME FACON DE LA FAIRE EST D4utiliser LE MODE -->
+                        <!--  <TextBox x:Name="myTextBox" Text="{Binding ElementName=mySlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Path=Value}" Width="100" ></TextBox>-->
                         <!-- <TextBox x:Name="myTextBox" Text="{Binding ElementName=mySlider,Path=Value}" Width="100" ></TextBox>-->
-                       
-                      
-                      <!--<TextBox x:Name="myTextBox" Text="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Title}" >
+
+
+                        <!--<TextBox x:Name="myTextBox" Text="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Title}" >
                         </TextBox> modifié le titre de mla fenetre grace à un TextBox-->
 
                         <TextBox Text="{Binding Path=.}"/>
                     </WrapPanel>
 
-                    <WrapPanel Grid.Row="8" >
+                    <WrapPanel Grid.Row="9" >
                         <TextBlock Text="Taille de la fenetre : "/>
                         <TextBox Text ="{Binding Path=Width}"  Width="50"/>
                         <!--liaison du dataContext avec la fenetre + le this.DataContext = this; pour les coordonné de la fenetre-->
@@ -154,11 +155,11 @@
 
                     </WrapPanel>
 
-                    <WrapPanel Grid.Row="9">
+                    <WrapPanel Grid.Row="10">
                         <TextBox Text="{Binding Path=Title}"/>
                     </WrapPanel>
 
-                    <WrapPanel Grid.Row="10">
+                    <WrapPanel Grid.Row="11">
                         <TextBlock Text="Nom" Width="60"></TextBlock>
                         <TextBox x:Name="nom" Text ="{Binding Path=Name}" Width="60"></TextBox>
                         <TextBlock Text="Prénom" Width="60"></TextBlock>
@@ -167,16 +168,16 @@
                         <TextBox x:Name="age1" Text ="{Binding Path=Age}" Width="60"></TextBox>
                     </WrapPanel>
 
-                    <ListBox Grid.Column="1" Height="200"  ></ListBox>
+                    <ListBox Grid.Column="1"  />
                 </Grid>
-               
+
 
             </TabItem>
 
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="C:/Users/stagiaire/Desktop/images/open.ico"/>
+                       <!-- <Image Source="C:/Users/stagiaire/Desktop/images/open.ico"/>-->
                         <TextBlock Text="{StaticResource Results}"/>
 
                     </StackPanel>
