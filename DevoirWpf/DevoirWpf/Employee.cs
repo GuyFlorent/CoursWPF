@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DevoirWpf
 {
-    class Employee : INotifiedPropertyChanged
+    public class Employee : INotifyPropertyChanged
     {
 
         /* public int Age {get; set; }
@@ -17,7 +17,12 @@ namespace DevoirWpf
         private string _Name;
         private int _Age;
         private string _FirstName;
-       
+       public Employee(string name, string firstName, int age)
+        {
+            this._Age = age;
+            this._Name = name;
+            this._FirstName = firstName;
+        }
 
        
           public int Age
