@@ -13,8 +13,8 @@
     <DockPanel>
         <ToolBarTray DockPanel.Dock =" top" HorizontalAlignment="Right">
             <ToolBar>
-                <Button Content="{StaticResource ClearStats}"></Button>
-                <Button Content="{StaticResource SaveLastAnalysis}"></Button>
+                <Button Content="{StaticResource ClearStats}" VerticalAlignment="Bottom"></Button>
+                <Button Content="{StaticResource SaveLastAnalysis}" Click="Button_Click_2"></Button>
                 <Button Content="{StaticResource ValidateHermeticus}"></Button>
                 <Button Content="{StaticResource About}"></Button>
             </ToolBar>
@@ -36,7 +36,10 @@
                 </TabItem.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="22" />
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="517"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -54,7 +57,7 @@
 
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Grid.Column="0">
+                    <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
                         <TextBlock Text=" texte" Grid.Row="0"/>
                         <ComboBox x:Name="Combo1" IsEditable="True" Grid.Column="0" Grid.Row="0">
                             <!-- C'est possible d'ajouter avec comboxItem les chose dans le menu-->
@@ -63,7 +66,7 @@
                             <ComboBoxItem Content="exemple1" ></ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
-                    <GroupBox Header="{StaticResource Authentication}" Grid.Row="1" Grid.Column="0">
+                    <GroupBox Header="{StaticResource Authentication}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,0,0,14" Grid.RowSpan="5">
                         <StackPanel>
                             <RadioButton x:Name="msg" Content="{StaticResource WindowsAuthentication}">
 
@@ -87,7 +90,7 @@
                             </Grid>
                         </StackPanel>
                     </GroupBox>
-                    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+                    <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4" Margin="0,6,0,43" Grid.RowSpan="2">
                         <StackPanel.Resources>
                             <Style TargetType="Button">
                                 <Setter Property="Margin" Value="5,0,0,0"/>
@@ -102,12 +105,12 @@
 
                     </StackPanel>
 
-                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource Tri}">
+                    <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource Tri}" Grid.ColumnSpan="4" Margin="0,1,0,27">
                     </TextBlock>
 
-                    <Label Content="{StaticResource Database}" Grid.Row="5"/>
+                    <Label Content="{StaticResource Database}" Grid.Row="7" Grid.ColumnSpan="4" Margin="0,17,0,1"/>
 
-                    <DataGrid Grid.Row="6">
+                    <DataGrid Grid.Row="7" Grid.ColumnSpan="4" Margin="0,43,0,77" Grid.RowSpan="2">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{StaticResource Database}"/>
                             <DataGridTextColumn Header="{StaticResource Database}"/>
@@ -117,11 +120,11 @@
                     </DataGrid>
                     <!--Ajout de deux autres ligne sur la gird.row et ici on met le numero de la ligne pour
                     continuer-->
-                    <WrapPanel Margin =" 0,10,0,0" Grid.Row="7" >
+                    <WrapPanel Margin ="0,35,0,49" Grid.Row="8" Grid.ColumnSpan="4" >
                         <TextBlock Text="TItre de la fenetre : "/>
                         <TextBox Width="150"/>
                     </WrapPanel>
-                    <WrapPanel Grid.Row="8" >
+                    <WrapPanel Grid.Row="8" Grid.ColumnSpan="4" Margin="0,53,0,202" Grid.RowSpan="2" >
                         <TextBlock Text="Taille de la fenetre : "/>
                         <TextBox Text ="{Binding Width}"  Width="50"/>
                         <!--liaison du dataContext avec la fenetre + le this.DataContext = this; pour les coordonné de la fenetre-->
@@ -131,7 +134,7 @@
                     </WrapPanel>
                     <!--Ajout d'une ligne pour mettre un slide et lier le slider avec mettre le nom
                     du Slider dans le binding -->
-                    <WrapPanel Grid.Row="9">
+                    <WrapPanel Grid.Row="8" Grid.ColumnSpan="4" Margin="0,71,0,184" Grid.RowSpan="2">
                         <!-- POSSIBLE DE CHANGER DANS LES DEUX SENS AVEC UPDATESOURCETRIGGER=PropertyChange dans le TextBox-->
                         <Slider x:Name="mySlider"  Maximum="100"   Width="50" ></Slider>
                         <!--DEUXIME FACON DE LA FAIRE EST D4utiliser LE MODE -->
@@ -145,7 +148,7 @@
                         <TextBox Text="{Binding Path=.}"/>
                     </WrapPanel>
 
-                    <WrapPanel Grid.Row="8" >
+                    <WrapPanel Grid.Row="8" Grid.ColumnSpan="4" Margin="0,53,0,202" Grid.RowSpan="2" >
                         <TextBlock Text="Taille de la fenetre : "/>
                         <TextBox Text ="{Binding Path=Width}"  Width="50"/>
                         <!--liaison du dataContext avec la fenetre + le this.DataContext = this; pour les coordonné de la fenetre-->
@@ -154,11 +157,11 @@
 
                     </WrapPanel>
 
-                    <WrapPanel Grid.Row="9">
+                    <WrapPanel Grid.Row="8" Grid.ColumnSpan="4" Margin="0,71,0,184" Grid.RowSpan="2">
                         <TextBox Text="{Binding Path=Title}"/>
                     </WrapPanel>
 
-                    <WrapPanel Grid.Row="10">
+                    <WrapPanel Grid.Row="8" Grid.ColumnSpan="4" Margin="0,89,0,217" Grid.RowSpan="2">
                         <TextBlock Text="Nom" Width="60"></TextBlock>
                         <TextBox x:Name="nom" Text ="{Binding Path=Name}" Width="60"></TextBox>
                         <TextBlock Text="Prénom" Width="60"></TextBlock>
@@ -167,21 +170,21 @@
                         <TextBox x:Name="age1" Text ="{Binding Path=Age}" Width="60"></TextBox>
                     </WrapPanel>
 
-                    <ListBox x:Name="llist" Grid.Column="1" Width="200" Height="200" ItemsSource="{Binding Liste_Employee}"  >
+                    <ListBox x:Name="llist" Grid.Column="4" Width="200" Height="200" ItemsSource="{Binding Liste_Employee}" Margin="0,0,0,14" Grid.RowSpan="8" SelectionChanged="Llist_SelectionChanged"  >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <WrapPanel>
-                                <TextBlock Text="{Binding Name}"/>
-                                <TextBlock Text=" "/>
-                                <TextBlock Text="{Binding FirstName}"/>
-                                <TextBlock Text=" "/>
-                                <TextBlock Text="{Binding Age}"/>
+                                    <TextBlock Text="{Binding Name}"/>
+                                    <TextBlock Text=" "/>
+                                    <TextBlock Text="{Binding FirstName}"/>
+                                    <TextBlock Text=" "/>
+                                    <TextBlock Text="{Binding Age}"/>
                                 </WrapPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
 
-                    <WrapPanel  Grid.Row="1" Grid.Column="1">
+                    <WrapPanel  Grid.Row="1" Grid.Column="4" Margin="0,0,0,14" Grid.RowSpan="5">
                         <TextBlock Text="Nom"></TextBlock>
                         <TextBox x:Name="AddNom"  Width="20" ></TextBox>
                         <TextBlock Text="Prenom"></TextBlock>
@@ -190,12 +193,12 @@
                         <TextBox x:Name="AddAge" Width="20" ></TextBox>
                         <Button x:Name="valide" Content="valid" Click="Valide_Click"  ></Button>
                     </WrapPanel>
-                    <WrapPanel Grid.Row="2" Grid.Column="1">
+                    <WrapPanel Grid.Row="5" Grid.Column="4" Margin="0,12,0,20" Grid.RowSpan="2">
                         <Button x:Name="suprimé" Content="suprimé" Click="Suprimé_Click"></Button>
                     </WrapPanel>
 
-                     <!-- update de la liste grace au binding -->
-                    <WrapPanel  Grid.Row="3" Grid.Column="1">
+                    <!-- update de la liste grace au binding -->
+                    <WrapPanel  Grid.Row="6" Grid.Column="4" Margin="0,6,0,43" Grid.RowSpan="2">
                         <TextBlock Text="Nom"></TextBlock>
                         <TextBox  Width="20"  DataContext="{Binding ElementName=llist, Path=SelectedItem}" Text="{Binding Name}"></TextBox>
                         <TextBlock Text="prénom: "></TextBlock>
@@ -203,7 +206,7 @@
                         <TextBlock Text="Age"></TextBlock>
                         <TextBox  Width="20"  DataContext="{Binding ElementName=llist, Path=SelectedItem}" Text="{Binding Age}"></TextBox>
                     </WrapPanel>
-                    
+
 
                 </Grid>
 

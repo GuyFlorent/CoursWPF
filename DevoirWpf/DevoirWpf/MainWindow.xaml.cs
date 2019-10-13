@@ -103,5 +103,12 @@ namespace DevoirWpf
             mainViewModel.Remove_Content((Employee)llist.SelectedItem);
 
         }
+
+        private void Llist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+       
     }
 }

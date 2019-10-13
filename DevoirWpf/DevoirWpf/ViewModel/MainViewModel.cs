@@ -57,7 +57,7 @@ namespace DevoirWpf.ViewModel
         {
             //méthode pour lire un fichier xml aves C#
             var doc = new XmlDocument();
-            doc.Load("C:/Users/stagiaire/Desktop/images/employee.xml");
+            doc.Load("../../Resources/employee.xml");
             var xmlNodeList = doc.DocumentElement?.SelectNodes("/employees/employee");
             if (xmlNodeList == null) return;
 
